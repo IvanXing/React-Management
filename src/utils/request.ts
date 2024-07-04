@@ -50,10 +50,10 @@ instance.interceptors.response.use(
 )
 
 const request = {
-  get(url: string, params: any) {
+  get<T>(url: string, params: any): Promise<T> {
     return instance.get(url, { params })
   },
-  post(url: string, params: any) {
+  post<T>(url: string, params: any): Promise<T> {
     return instance.post(url, params)
   }
 }
